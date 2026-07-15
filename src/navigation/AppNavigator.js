@@ -40,7 +40,7 @@ import WaterBillingScreen from "../screens/WaterBillingScreen";
 import WaterBillingSuccessfulScreen from "../screens/WaterBillingSuccessfulScreen";
 import WithdrawalScreen from "../screens/WithdrawalScreen";
 import WithdrawalSuccessfulScreen from "../screens/WithdrawalSuccessfulScreen";
-
+import AppInfoScreen from "../screens/AppInfoScreen";
 
 
 
@@ -237,6 +237,10 @@ const AppNavigator = () => {
                 <Stack.Screen
                     name="InterestRate"
                     component={InterestRateScreen}
+                />
+                <Stack.Screen
+                    name="AppInfo"
+                    component={AppInfoScreen}
                 />
             </Stack.Navigator>
         </NavigationContainer>
