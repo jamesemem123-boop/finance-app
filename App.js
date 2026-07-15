@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
 import { useFonts } from "expo-font";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
+import { ThemeProvider } from "./src/components/ThemeContext";
 
 export default function App() {
 
@@ -27,7 +28,9 @@ export default function App() {
 
   return(
     <SafeAreaProvider>
+     <ThemeProvider>
       <AppNavigator />
+    </ThemeProvider>
     </SafeAreaProvider>
   );
 
