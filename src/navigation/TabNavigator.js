@@ -39,8 +39,8 @@ const TabNavigator = () => {
             iconName = focused ? "search" : "search-outline";
           }
 
-          // Message
-          else if (route.name === "Message") {
+          // News
+          else if (route.name === "News") {
             iconName = focused
               ? "mail"
               : "mail-outline";
@@ -86,7 +86,7 @@ const TabNavigator = () => {
       />
 
       <Tab.Screen
-        name="Message"
+        name="News"
         component={MessageScreen}
       />
 

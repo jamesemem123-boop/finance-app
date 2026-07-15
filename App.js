@@ -2,6 +2,8 @@ import { StatusBar } from "expo-status-bar";
 import AppNavigator from "./src/navigation/AppNavigator";
 import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
 import { useFonts } from "expo-font";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+
 
 export default function App() {
 
@@ -24,7 +26,9 @@ export default function App() {
   }
 
   return(
-    <AppNavigator />
+    <SafeAreaProvider>
+      <AppNavigator />
+    </SafeAreaProvider>
   );
 
 }
