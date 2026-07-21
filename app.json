@@ -22,8 +22,8 @@
     },
     "plugins": [
       "expo-font",
-      "expo-localization",
-      "expo-sharing"
+      "expo-localization"
+      
     ]
   }
 }
