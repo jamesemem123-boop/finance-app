@@ -1,4 +1,4 @@
-// src/data/legalContents.js
+
 
 export const privacyPolicy = `BigVa Finance Privacy Policy
 Last Updated: July 2026

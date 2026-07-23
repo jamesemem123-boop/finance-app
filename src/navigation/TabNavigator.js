@@ -1,99 +1,27 @@
 import React from "react";
-import { Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
 
-// Import your screens
+
 import HomeScreen from "../screens/HomeScreen";
-import SearchScreen from "../screens/SearchScreen";
+import SearchStack from "../services/SearchStack";
 import MessageScreen from "../screens/MessagesScreen";
-import SettingsScreen from "../screens/SettingsScreen";
+import SettingsStack from "../services/SettingsStack";
+import CustomTabBar from "./CustomTabBar";
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
   return (
     <Tab.Navigator
-      screenOptions={({ route }) => ({
-        headerShown: false,
-
-        tabBarStyle: {
-          height: 70,
-          paddingBottom: 10,
-          paddingTop: 10,
-        },
-
-        tabBarActiveTintColor: "#2563EB",
-        tabBarInactiveTintColor: "#787c79",
-
-        tabBarIcon: ({ color, size, focused }) => {
-          let iconName;
-
-          // Home
-          if (route.name === "Home") {
-            iconName = focused ? "home" : "home-outline";
-          }
-
-          // Search
-          else if (route.name === "Search") {
-            iconName = focused ? "search" : "search-outline";
-          }
-
-          // News
-          else if (route.name === "News") {
-            iconName = focused
-              ? "mail"
-              : "mail-outline";
-          }
-
-          // Settings
-          else if (route.name === "Settings") {
-            iconName = focused ? "settings-sharp" : "settings-outline";
-          }
-
-          return (
-            <Ionicons
-              name={iconName}
-              size={24}
-              color={color}
-            />
-          );
-        },
-
-        // Show text only for active tab
-        tabBarLabel: ({ focused, color }) =>
-          focused ? (
-            <Text
-              style={{
-                color,
-                fontSize: 12,
-                fontWeight: "600",
-              }}
-            >
-              {route.name}
-            </Text>
-          ) : null,
-      })}
+      tabBar={(props) => <CustomTabBar {...props} />}
+      screenOptions={{ 
+        headerShown: false 
+      }}
     >
-      <Tab.Screen
-        name="Home"
-        component={HomeScreen}
-      />
-
-      <Tab.Screen
-        name="Search"
-        component={SearchScreen}
-      />
-
-      <Tab.Screen
-        name="News"
-        component={MessageScreen}
-      />
-
-      <Tab.Screen
-        name="Settings"
-        component={SettingsScreen}
-      />
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Search" component={SearchStack} />
+      <Tab.Screen name="News" component={MessageScreen} />
+      <Tab.Screen name="Settings" component={SettingsStack} />
     </Tab.Navigator>
   );
 };

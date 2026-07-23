@@ -1,57 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, Image, Switch, TouchableOpacity, StyleSheet, ScrollView, Modal, Linking } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, Modal, Linking } from 'react-native';
 import { SafeAreaView } from "react-native-safe-area-context";
 import Icon from 'react-native-vector-icons/Ionicons';
-import { useTranslation } from 'react-i18next';
-import i18n from '../config/i18n';
-import { useTheme } from '../components/ThemeContext'; // Import the ThemeContext
-
-const LanguageModal = ({ visible, onClose }) => {
-  const { i18n } = useTranslation();
-  const { theme } = useTheme(); // Assuming you've implemented your theme context
-
-  const languages = [
-    { code: 'en', name: 'English' },
-    { code: 'es', name: 'Español' },
-    { code: 'fr', name: 'Français' },
-    { code: 'ig', name: 'Igbo' },
-    { code: 'yo', name: 'Yorùbá' },
-    { code: 'ha', name: 'Hausa' },
-    { code: 'ar', name: 'العربية' },
-  ];
-
-  return (
-    // Set transparent to false for true full-screen
-    <Modal visible={visible} transparent={false} animationType="slide">
-      <View style={[styles.fullScreenModal, { backgroundColor: theme.background }]}>
-        
-        {/* Header with a Close button is vital for full-screen modals */}
-        <View style={styles.header}>
-          <Text style={[styles.modalTitle, { color: theme.text }]}>Select Language</Text>
-          <TouchableOpacity onPress={onClose}>
-          </TouchableOpacity>
-        </View>
-
-        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ padding: 20 }}>
-          {languages.map((lang) => (
-            <TouchableOpacity
-              key={lang.code}
-              style={[styles.optionContainer, { borderBottomColor: theme.border }]}
-              onPress={() => { i18n.changeLanguage(lang.code); onClose(); }}
-            >
-              <Text style={[styles.optionText, { color: theme.text }]}>{lang.name}</Text>
-            </TouchableOpacity>
-          ))}
-        </ScrollView>
-      </View>
-    </Modal>
-  );
-};
 
 const SupportModal = ({ visible, onClose }) => {
 
   const openWhatsApp = () => {
-    const phoneNumber = '+2348107181148'; // Your Number
+    const phoneNumber = '+2348107181148'; 
     const url = `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent('Hello, I need help with the BigVa app.')}`;
     Linking.openURL(url).catch(() => alert('WhatsApp not installed'));
     onClose();
@@ -94,10 +49,8 @@ const SupportModal = ({ visible, onClose }) => {
 
 
 const SettingsScreen = ({ navigation }) => {
-  const [isLanguageModalVisible, setIsLanguageModalVisible] = useState(false);
   const [isAppInfoModalVisible, setIsAppInfoModalVisible] = useState(false);
   const [isSupportVisible, setIsSupportVisible] = useState(false);
-  const { theme, isDarkMode, toggleTheme } = useTheme();
   const userProfileImage = "https://picsum.photos/200";
   const userName = "Push Puttichai";
 
@@ -132,20 +85,6 @@ const SettingsScreen = ({ navigation }) => {
 
         <TouchableOpacity
           style={styles.itemContainer}
-          onPress={() => setIsLanguageModalVisible(true)}
-        >
-          <Text style={styles.itemText}>Languages</Text>
-          <Icon name="chevron-forward-outline" size={20} color="#ccc" />
-        </TouchableOpacity>
-
-        {/* 2. Call the component here */}
-        <LanguageModal
-          visible={isLanguageModalVisible}
-          onClose={() => setIsLanguageModalVisible(false)}
-        />
-
-        <TouchableOpacity
-          style={styles.itemContainer}
           onPress={() => navigation.navigate('AppInfo')} // Directly navigate to the screen
         >
           <Text style={styles.itemText}>App Information</Text>
@@ -162,29 +101,9 @@ const SettingsScreen = ({ navigation }) => {
           <Icon name="chevron-forward-outline" size={20} color="#ccc" />
         </TouchableOpacity>
 
-// Put the modal component at the bottom of your render function
+        {/* Put the modal component at the bottom of your render function */}
         <SupportModal visible={isSupportVisible} onClose={() => setIsSupportVisible(false)} />
 
-    
-
-          <View style={[styles.itemContainer, { borderBottomColor: theme.border }]}>
-            <Text style={[styles.itemText, { color: theme.text }]}>Dark Mode</Text>
-            <Switch
-              // This is the key part. 
-              // We use your theme's primary color to match your branding when ON.
-              trackColor={{ false: '#767577', true: theme.primary }}
-
-              // The "thumb" is the circle that slides
-              thumbColor={'#FFFFFF'}
-
-              // iOS background color when OFF
-              ios_backgroundColor="#3e3e3e"
-
-              // Connects to your ThemeContext
-              onValueChange={toggleTheme}
-              value={isDarkMode}
-            />
-          </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -304,8 +223,6 @@ const styles = StyleSheet.create({
     fontWeight: '700', 
     marginBottom: 10 
   },
- 
-
 });
 
 export default SettingsScreen;
