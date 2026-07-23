@@ -43,7 +43,7 @@ const MessagesScreen = () => {
         <Text style={styles.title}>News</Text>
       </View>
 
-      // news card
+     
       
      <FlatList
   data={articles}

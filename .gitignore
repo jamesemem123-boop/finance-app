@@ -40,3 +40,6 @@ yarn-error.*
 /ios
 /android
 .env
+.idea
+assets/images/masterCard.svg
+assets/images/visaCard.svg
