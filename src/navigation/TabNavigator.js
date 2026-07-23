@@ -4,7 +4,6 @@ import { Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
-// Import your screens
 import HomeScreen from "../screens/HomeScreen";
 import SearchScreen from "../screens/SearchScreen";
 import MessageScreen from "../screens/MessagesScreen";
@@ -30,24 +29,20 @@ const TabNavigator = () => {
         tabBarIcon: ({ color, size, focused }) => {
           let iconName;
 
-          // Home
           if (route.name === "Home") {
             iconName = focused ? "home" : "home-outline";
           }
 
-          // Search
           else if (route.name === "Search") {
             iconName = focused ? "search" : "search-outline";
           }
 
-          // News
           else if (route.name === "News") {
             iconName = focused
               ? "mail"
               : "mail-outline";
           }
 
-          // Settings
           else if (route.name === "Settings") {
             iconName = focused ? "settings-sharp" : "settings-outline";
           }
@@ -61,7 +56,6 @@ const TabNavigator = () => {
           );
         },
 
-        // Show text only for active tab
         tabBarLabel: ({ focused, color }) =>
           focused ? (
             <Text
