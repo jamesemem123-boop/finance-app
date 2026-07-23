@@ -2,7 +2,6 @@ import React from 'react';
 import { ScrollView, Text, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from "react-native-safe-area-context";
 
-// Import all your data directly here
 import { appAbout, privacyPolicy, termsOfService } from '../data/legalContents';
 
 const AppInfoScreen = () => {
