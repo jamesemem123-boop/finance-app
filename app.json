@@ -25,5 +25,8 @@
     "ios": {
       "bundleIdentifier": "com.anonymous.financeapp"
     }
+      "expo-localization"
+      
+    ]
   }
 }
