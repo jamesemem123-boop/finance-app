@@ -1,19 +1,23 @@
 // TabNavigator.js
 import React from "react";
-import { Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
+
 
 import HomeScreen from "../screens/HomeScreen";
-import SearchScreen from "../screens/SearchScreen";
+import SearchStack from "../services/SearchStack";
 import MessageScreen from "../screens/MessagesScreen";
-import SettingsScreen from "../screens/SettingsScreen";
+import SettingsStack from "../services/SettingsStack";
+import CustomTabBar from "./CustomTabBar";
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
   return (
     <Tab.Navigator
+      tabBar={(props) => <CustomTabBar {...props} />}
+      screenOptions={{ 
+        headerShown: false 
+      }}
       screenOptions={({ route }) => ({
         headerShown: false,
 
@@ -70,25 +74,10 @@ const TabNavigator = () => {
           ) : null,
       })}
     >
-      <Tab.Screen
-        name="Home"
-        component={HomeScreen}
-      />
-
-      <Tab.Screen
-        name="Search"
-        component={SearchScreen}
-      />
-
-      <Tab.Screen
-        name="News"
-        component={MessageScreen}
-      />
-
-      <Tab.Screen
-        name="Settings"
-        component={SettingsScreen}
-      />
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Search" component={SearchStack} />
+      <Tab.Screen name="News" component={MessageScreen} />
+      <Tab.Screen name="Settings" component={SettingsStack} />
     </Tab.Navigator>
   );
 };

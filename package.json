@@ -27,12 +27,15 @@
     "react-hook-form": "^7.81.0",
     "react-i18next": "^17.0.8",
     "react-native": "0.86.0",
+    "react-native-country-flag": "^2.0.2",
     "react-native-gesture-handler": "~2.32.0",
     "react-native-maps": "1.27.2",
     "react-native-reanimated": "4.5.0",
     "react-native-safe-area-context": "~5.7.0",
     "react-native-screens": "4.25.2",
     "react-native-svg": "15.15.4",
+    "react-native-swipe-list-view": "^3.2.9",
+    "react-native-worklets": "^0.10.2",
     "react-native-web": "^0.21.2",
     "yup": "^1.7.1"
   },
@@ -44,6 +47,7 @@
   },
   "private": true,
   "devDependencies": {
+    "babel-preset-expo": "^57.0.3",
     "react-native-svg-transformer": "^1.5.3"
   }
 }

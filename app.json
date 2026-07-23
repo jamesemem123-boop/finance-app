@@ -20,13 +20,8 @@
     "plugins": [
       "expo-font",
       "expo-localization",
-      "expo-sharing"
-    ],
-    "ios": {
-      "bundleIdentifier": "com.anonymous.financeapp"
-    }
-      "expo-localization"
-      
+      "expo-sharing",
+      "expo-status-bar"
     ]
   }
 }
