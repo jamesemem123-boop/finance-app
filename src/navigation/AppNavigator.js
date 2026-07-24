@@ -20,9 +20,9 @@ import ChangePasswordSuccessfulScreen from "../screens/ChangePasswordSuccessfulS
 import AppInfoScreen from "../screens/AppInfoScreen";
 
 // Banking & Transactions
-import TransferMoneyScreen from "../screens/TransferMoneyScreen";
-import TransferMoneyScreen2 from "../screens/TransferMoneyScreen2";
-import TransferSuccessfulScreen from "../screens/TransferSuccessfulScreen";
+import TransferScreen from "../screens/TransferScreen";
+import TransferDetailsScreen from "../screens/TransferDetailsScreen";
+import TransferSuccessScreen from "../screens/TransferSuccessScreen";
 import TransactionReceiptScreen from "../screens/TransactionReceiptScreen";
 import TransactionReportScreen from "../screens/TransactionReportScreen";
 import PaymentHistoryScreen from "../screens/PaymentHistoryScreen";
@@ -79,9 +79,9 @@ const AppNavigator = () => {
                 <Stack.Screen name="AppInfo" component={AppInfoScreen} />
 
                 {/* --- Transfers & Transactions --- */}
-                <Stack.Screen name="TransferMoney" component={TransferMoneyScreen} />
-                <Stack.Screen name="TransferMoney2" component={TransferMoneyScreen2} />
-                <Stack.Screen name="TransferSuccessful" component={TransferSuccessfulScreen} />
+                <Stack.Screen name="Transfer" component={TransferScreen} />
+                <Stack.Screen name="TransferDetails" component={TransferDetailsScreen} />
+                <Stack.Screen name="TransferSuccess" component={TransferSuccessScreen} />
                 <Stack.Screen name="TransactionReceipt" component={TransactionReceiptScreen} />
                 <Stack.Screen name="TransactionReport" component={TransactionReportScreen} />
                 <Stack.Screen name="PaymentHistory" component={PaymentHistoryScreen} />

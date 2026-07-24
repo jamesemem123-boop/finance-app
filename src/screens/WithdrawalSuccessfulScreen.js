@@ -5,8 +5,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
-  SafeAreaView,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const WithdrawalSuccessfulScreen = ({ navigation }) => {
   const handleConfirm = () => {
@@ -27,7 +27,7 @@ const WithdrawalSuccessfulScreen = ({ navigation }) => {
       <View style={styles.content}>
         {/* Success Illustration */}
         <Image
-          source={require("../../assets/images/withdraw.png")}
+          source={require("../../assets/images/exchange.svg")}
           resizeMode="contain"
           style={styles.image}
         />

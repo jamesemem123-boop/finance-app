@@ -7,9 +7,9 @@ import {
     FlatList,
     TouchableOpacity,
     Image,
-    SafeAreaView,
     StatusBar,
 } from 'react-native';
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons, Feather } from '@expo/vector-icons';
 import { fetchTransferContacts } from '../services/financeService';
 

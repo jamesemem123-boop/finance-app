@@ -4,10 +4,10 @@ import {
     Text,
     View,
     TouchableOpacity,
-    SafeAreaView,
     StatusBar,
     Modal,
 } from 'react-native';
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function TransferSuccessScreen({ transferData, onClose, onNavigateHome }) {

@@ -5,12 +5,12 @@ import {
     View,
     SectionList,
     TouchableOpacity,
-    SafeAreaView,
     StatusBar,
     ScrollView,
     ActivityIndicator,
     Dimensions,
 } from 'react-native';
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons, Feather } from '@expo/vector-icons';
 import { fetchTransactionReport } from '../services/financeService';
 

@@ -14,12 +14,12 @@ const beneficiaries = [
   {
     id: 1,
     name: "Emma",
-    image: require("../../assets/images/emma.jpg"),
+    image: require("../../assets/images/exchange.svg"),
   },
   {
     id: 2,
     name: "Justin",
-    image: require("../../assets/images/justin.jpg"),
+    image: require("../../assets/images/exchange.svg"),
   },
 ];
 
@@ -265,7 +265,6 @@ const MobileRechargeScreen = ({ navigation }) => {
             Other
           </Text>
         </TouchableOpacity>
-      </View>
 
       {/* Selected Amount */}
 

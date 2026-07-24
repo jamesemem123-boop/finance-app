@@ -4,15 +4,15 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  SafeAreaView,
 } from 'react-native';
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
 // Adjust this path to wherever "Illustration 2.svg" actually lives in your assets folder
 import SuccessIllustration from '../../assets/icons/Illustration 2.svg';
 
-export default function internetBillingSucessfulScreen ({ navigation }) {
+export default function InternetBillingSucessfulScreen ({ navigation }) {
   const handleConfirm = () => {
     // Goes back to the main tabs (Home) after a successful payment
     navigation.navigate('Tabs');

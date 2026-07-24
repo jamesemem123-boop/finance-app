@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import {
-  SafeAreaView,
   View,
   Text,
   StyleSheet,
   ScrollView,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import AuthHeader from "../components/AuthHeader";
 import AuthCard from "../components/AuthCard";

@@ -6,9 +6,9 @@ import {
     TextInput,
     TouchableOpacity,
     Image,
-    SafeAreaView,
     StatusBar,
 } from 'react-native';
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons, Feather } from '@expo/vector-icons';
 
 export default function TransferDetailsScreen({ recipient, onBack, onNavigateHome, onSend }) {

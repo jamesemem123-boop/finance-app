@@ -72,7 +72,7 @@ const WithdrawalScreen = ({ navigation }) => {
 
         {/* Illustration */}
         <Image
-          source={require("../../assets/images/withdraw.png")}
+          source={require("../../assets/images/exchange.svg")}
           style={styles.image}
           resizeMode="contain"
         />
