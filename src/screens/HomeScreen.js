@@ -59,13 +59,14 @@ export default function HomeScreen({ onNavigate }) {
     return (
         <SafeAreaView style={styles.container}>
         <StatusBar barStyle="dark-content" />
-        <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
+        <ScrollView contentContainerStyle={styles.scrollContent} 
+        showsVerticalScrollIndicator={false}>
             
             {/* Dynamic Greeting */}
             <View style={styles.header}>
             <Text style={styles.greetingTitle}>Welcome,</Text>
             <Text style={styles.greetingName}>
-                {loading ? '--' : (userData.greetingName ?? '--')}!
+                {loading ? 'Gega' : (userData.greetingName ?? '--')}
             </Text>
             </View>
 
@@ -79,7 +80,7 @@ export default function HomeScreen({ onNavigate }) {
 
                 <View style={styles.cardHeader}>
                 <Text style={styles.cardName}>
-                    {loading ? '--' : (userData.cardHolder ?? '--')}
+                    {loading ? 'Gega Smith' : (userData.cardHolder ?? '--')}
                 </Text>
                 <Text style={styles.cardTier}>
                     {loading ? '--' : (userData.tier ?? '--')}

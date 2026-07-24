@@ -12,7 +12,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 // Adjust this path to wherever "Illustration 2.svg" actually lives in your assets folder
 import SuccessIllustration from '../../assets/icons/Illustration 2.svg';
 
-export default function internetBillingSucessfulScreen ({ navigation }) {
+const WaterBillingSuccessfulScreen = ({ navigation }) => {
   const handleConfirm = () => {
     // Goes back to the main tabs (Home) after a successful payment
     navigation.navigate('Tabs');
@@ -107,3 +107,4 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
 });
+export default WaterBillingSuccessfulScreen;

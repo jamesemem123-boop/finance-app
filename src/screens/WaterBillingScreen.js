@@ -28,7 +28,7 @@ const WATER_BOARDS = [
 const BILL_NUMBER_LENGTH = 11;
 const AMOUNTS = [1000, 3000, 7000];
 
-export default function WaterBillingScreen({ navigation }) {
+const WaterBillingScreen = ({ navigation }) => {
   const [waterBoard, setWaterBoard] = useState(null);
   const [billNumber, setBillNumber] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -410,3 +410,4 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
 });
+export default WaterBillingScreen;
