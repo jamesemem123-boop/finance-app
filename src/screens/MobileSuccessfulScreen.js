@@ -58,7 +58,7 @@ const MobileSuccessfulScreen = ({
         {/* Illustration */}
 
         <Image
-          source={require("../../assets/images/mobile-success.png")}
+          source={require("../../assets/images/exchange.svg")}
           style={styles.image}
           resizeMode="contain"
         />

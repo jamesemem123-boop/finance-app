@@ -71,7 +71,7 @@ const MobileConfirmScreen = ({
         {/* Illustration */}
 
         <Image
-          source={require("../../assets/images/mobile-confirm.png")}
+          source={require("../../assets/images/exchange.svg")}
           style={styles.image}
           resizeMode="contain"
         />
