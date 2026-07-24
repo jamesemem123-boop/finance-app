@@ -23,7 +23,7 @@ const CARDS = [
   { id: '3', label: '6011 4321 9087' },
 ];
 
-export default function WaterBillingConfirmScreen({ route, navigation }) {
+const WaterBillingConfirmScreen = ({ route, navigation }) => {
   const { waterBoard, billNumber, amount } = route.params;
 
   const [selectedCard, setSelectedCard] = useState(CARDS[0]);
@@ -299,3 +299,4 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
 });
+export default WaterBillingConfirmScreen;
